@@ -1,7 +1,7 @@
 Various links :
 
 [Handling and processing Strings in R][GS] by Gaston Sanchez
-[GS]http://gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf  
+[GS]: http://gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf  
 
 http://www.r-bloggers.com/  
 
