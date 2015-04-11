@@ -12,6 +12,6 @@ http://www.r-bloggers.com/
 [Reading larger datasets with read.table][RLD]
 [RLD]: https://github.com/DataScienceSpecialization/courses/blob/master/02_RProgramming/reading_data_I/index.md#reading-in-larger-datasets-with-readtable  
 
-[LATEX mathematiques](http://en.wikibooks.org/wiki/LaTeX/Mathematics)  
+[LATEX mathematics](http://en.wikibooks.org/wiki/LaTeX/Mathematics)  
 
 
