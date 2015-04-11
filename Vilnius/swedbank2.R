@@ -7,7 +7,7 @@ cat("to start the computation, write computeStatement()")
 
 computeStatement <- function() {
 
-  dateOfFile <- "2015-04-04"
+  dateOfFile <- "2015-04-11"
   file <- paste("C:/Users/user/Documents/_Documents importants/Banques/Swedbank/Swedbank_statement_", 
                 dateOfFile, ".csv", sep = "")
   
