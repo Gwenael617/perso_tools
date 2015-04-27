@@ -7,7 +7,7 @@ cat("to start the computation, write computeStatement()")
 
 computeStatement <- function() {
 
-  dateOfFile <- "2015-04-11"
+  dateOfFile <- "2015-04-27"
   file <- paste("C:/Users/user/Documents/_Documents importants/Banques/Swedbank/Swedbank_statement_", 
                 dateOfFile, ".csv", sep = "")
   
@@ -40,6 +40,9 @@ computeStatement <- function() {
   for(i in 1:length(statement$Code)){
           if("TT" %in% statement[i,6]){
                   statement[i,2] <- "Swedbank"}}
+  
+  ## special case for Indie Bar
+  statement[grepl("Indie Bar", statement$Details),2] <- "Indie Bar"
   
   ## date
   statement[,1] <- as.Date(statement[,1], format = "%Y-%m-%d")
