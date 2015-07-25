@@ -7,13 +7,13 @@ cat("to start the computation, write computeStatement()")
 
 computeStatement <- function() {
 
-  dateOfFile <- "2015-06-11"
-  file <- paste("C:/Users/user/Documents/_Documents importants/Banques/Swedbank/Swedbank_statement_", 
+  dateOfFile <- "2015-07-25"
+  file <- paste("P:/_Documents importants/Banques/Swedbank/Swedbank_statement_", 
                 dateOfFile, ".csv", sep = "")
   
   ## read the files
   statement <- read.csv(file)
-  categories <- read.csv("C:/Users/user/Documents/R_DSSgitWD3/perso_tools/Vilnius/sw_categories2.csv")
+  categories <- read.csv("N:/rwd/perso_tools/Vilnius/sw_categories2.csv")
   
   rm(file)
   
@@ -83,8 +83,8 @@ computeStatement <- function() {
                             "Curr", "Code")
   
   ## write in an Excel file
-  write.xlsx(statement,file="C:/Users/user/Documents/_Documents importants/Banques/Swedbank/tempStatement.xlsx", 
+  write.xlsx(statement,file="P:/_Documents importants/Banques/Swedbank/tempStatement.xlsx", 
              row.names = FALSE)
 
-} ## end of computeStatement() function
-
+} 
+## end of computeStatement() function
