@@ -1,10 +1,26 @@
-## update R, uninstall R, where are the packages stored
 
+
+## New links :
+## http://www.r-bloggers.com/r-3-2-2-is-released/  
+## http://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/
+## with administrator privilege on RGui
+## library(installr)
+## setInternet2(TRUE)
+## updateR()
+## !!choose the correct folder on N
+
+
+
+
+## former documentation
+
+## update R, uninstall R, where are the packages stored
 
 ## the code is coming from those sources :
 ## http://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/
 ## http://stackoverflow.com/a/20313683
 ## http://www.r-statistics.com/2015/03/r-3-1-3-is-released-easy-upgrading-for-windows-users-with-the-installr-package/
+
 
 # Example from the documentation ?updateR
 # 
