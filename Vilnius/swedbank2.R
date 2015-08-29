@@ -3,11 +3,12 @@
 ## require xlsx and stringr packages
 library(xlsx); library(stringr)
 
-cat("to start the computation, write computeStatement()")
+cat('\n to start the computation, write computeStatement("date of statement") 
+    for example computeStatement("2015-08-31")')
 
-computeStatement <- function() {
+computeStatement <- function(dateOfFile) {
 
-  dateOfFile <- "2015-08-13"
+  # dateOfFile <- "2015-08-28"
   file <- paste("P:/_Documents importants/Banques/Swedbank/Swedbank_statement_", 
                 dateOfFile, ".csv", sep = "")
   
