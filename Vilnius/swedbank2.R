@@ -1,4 +1,4 @@
-## this script read a statement and classify the expenses
+## this script read a bank statement and classify the expenses
 
 ## require xlsx and stringr packages
 library(xlsx); library(stringr)
@@ -7,15 +7,14 @@ cat('\n to start the computation, write computeStatement("date of statement")
     for example computeStatement("2015-08-31")')
 
 computeStatement <- function(dateOfFile) {
-
-  # dateOfFile <- "2015-08-28"
+  
   file <- paste("P:/_Documents importants/Banques/Swedbank/Swedbank_statement_", 
                 dateOfFile, ".csv", sep = "")
   
   ## read the files
-  statement <- read.csv(file)
+  statement <- read.csv(file, stringsAsFactors = FALSE)
   categories <- read.csv("N:/rwd/perso_tools/Vilnius/sw_categories2.csv")
-  
+
   rm(file)
   
   ## it's possible to group the following operations in one line :
@@ -36,14 +35,11 @@ computeStatement <- function(dateOfFile) {
   statement <- statement[!grepl("GRYNIEJI", statement$Details),]
   
   ## bank fees
-  statement[,2] <- as.character(statement[,2])
-  statement[,3] <- as.character(statement[,3])
+#   statement[,2] <- as.character(statement[,2])
+#   statement[,3] <- as.character(statement[,3])
   for(i in 1:length(statement$Code)){
           if("TT" %in% statement[i,6]){
-                  statement[i,2] <- "Swedbank"}}
-  
-  ## special case for Indie Bar
-  statement[grepl("Indie Bar", statement$Details),2] <- "Indie Bar"
+                  statement[i,3] <- "Swedbank"}}
   
   ## date
   statement[,1] <- as.Date(statement[,1], format = "%Y-%m-%d")
@@ -57,6 +53,12 @@ computeStatement <- function(dateOfFile) {
   }
   rm(realDate)
   
+  ## special cases
+  statement[grepl("UAB BIT", statement$Beneficiary),3] <- "Bite Lietuva"
+  statement[grepl("TEO", statement$Beneficiary),3] <- "Teo LT"
+  statement[grepl("UAB Panevezio biciulis", statement$Beneficiary),3] <- "Panevezio biciulis"
+  statement[grepl("EVP INTERNATIONAL", statement$Beneficiary),3] <- "City Bee"
+  
   ## create an empty data frame
   tempDF <- data.frame(matrix(NA, nrow=length(statement$Beneficiary), ncol=1))
   colnames(tempDF) <- "category"
@@ -69,9 +71,9 @@ computeStatement <- function(dateOfFile) {
   categories[,3] <- as.character(categories[,3])
   categories[,4] <- as.character(categories[,4])
   
-  for(i in 1:length(statement[,2])){
+  for(i in 1:length(statement[,3])){
           for(z in 1:length(categories[,2])){
-                  if(grepl(categories[z,2], statement[i,2])){
+                  if(grepl(categories[z,2], statement[i,3])){
                           statement[i,2]<- categories[z,3]
                           statement[i,7]<- categories[z,1]
                           statement[i,3]<- categories[z,4]}
