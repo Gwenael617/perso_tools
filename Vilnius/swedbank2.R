@@ -1,6 +1,7 @@
 ## this script read a bank statement and classify the expenses
 
 ## require xlsx and stringr packages
+# Sys.setenv(JAVA_HOME='N:/Java/jre1.8.0_66(bit)')
 library(xlsx); library(stringr)
 
 cat('\n to start the computation, write computeStatement("date of statement") 
