@@ -60,6 +60,9 @@ computeStatement <- function(dateOfFile) {
   statement[grepl("TEO", statement$Beneficiary),3] <- "Teo LT"
   statement[grepl("UAB Panevezio biciulis", statement$Beneficiary),3] <- "Panevezio biciulis"
   statement[grepl("EVP INTERNATIONAL", statement$Beneficiary),3] <- "City Bee"
+  statement[grepl("UAB Inchcape Motors", statement$Beneficiary), 3] <- "UAB Inchcape Motors"
+  statement[grepl("AB LIETUVOS DRAUDIMAS", statement$Beneficiary), 3] <- "AB LIETUVOS DRAUDIMAS"
+  statement[grepl("UAB LUKOIL BALTIJA", statement$Beneficiary), 3] <- "LUKOIL"
   
   ## create an empty data frame
   tempDF <- data.frame(matrix(NA, nrow=length(statement$Beneficiary), ncol=1))
