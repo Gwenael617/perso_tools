@@ -1,5 +1,4 @@
-Capacité de stockage d'une clé USB  
-http://www.flashbay.fr/aide/faq/capacite-de-stockage-cle-usb  
+[Capacité de stockage d'une clé USB] (http://www.flashbay.fr/aide/faq/capacite-de-stockage-cle-usb)
 
 2GO a en réalité 1905Mo (1.86GB)  
 4GO a en réalité 3809Mo (3.72GB)  
